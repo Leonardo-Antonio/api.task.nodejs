@@ -1,6 +1,7 @@
 import express, { Application } from "express";
 import morgan from "morgan";
 // Routes
+import HomeRouter from "./routes/home.router";
 import UserRouter from "./routes/users.router";
 import TaskRouter from "./routes/task.router"
 
@@ -25,6 +26,7 @@ export class App {
     }
 
     private routers(){
+        this.app.use(HomeRouter);
         this.app.use("/users", UserRouter);
         this.app.use("/tasks", TaskRouter);
     }
