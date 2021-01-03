@@ -18,6 +18,7 @@ export class App {
 
     private setting(){
         this.app.set("port", this.port || process.env.PORT);
+        console.log(process.env.PORT);
     }
 
     private middlewares(){
