@@ -16,7 +16,9 @@ exports.App = void 0;
 const express_1 = __importDefault(require("express"));
 const morgan_1 = __importDefault(require("morgan"));
 // Routes
+const home_router_1 = __importDefault(require("./routes/home.router"));
 const users_router_1 = __importDefault(require("./routes/users.router"));
+const task_router_1 = __importDefault(require("./routes/task.router"));
 class App {
     constructor(port) {
         this.port = port;
@@ -33,7 +35,9 @@ class App {
         this.app.use(express_1.default.json()); // acepta respuetas json
     }
     routers() {
+        this.app.use(home_router_1.default);
         this.app.use("/users", users_router_1.default);
+        this.app.use("/tasks", task_router_1.default);
     }
     listen() {
         return __awaiter(this, void 0, void 0, function* () {
