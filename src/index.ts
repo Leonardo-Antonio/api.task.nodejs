@@ -1,6 +1,6 @@
 import { App } from "./app";
 
 async function main(){
-    const app = new App(8080);
+    const app = new App();
     await app.listen();
 }main().then().catch();
