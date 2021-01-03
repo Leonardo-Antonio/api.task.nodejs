@@ -29,6 +29,7 @@ class App {
     }
     setting() {
         this.app.set("port", this.port || process.env.PORT);
+        console.log(process.env.PORT);
     }
     middlewares() {
         this.app.use(morgan_1.default('dev'));
